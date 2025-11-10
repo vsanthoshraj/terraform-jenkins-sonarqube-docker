@@ -1,9 +1,3 @@
-# ============================================
-# Key Pair Module - Main Configuration
-# File: modules/keypair/main.tf
-# Purpose: Create SSH key pair for EC2 access
-# ============================================
-
 locals {
   public_key_content = file(var.ssh_public_key_path)
 }
@@ -16,4 +10,3 @@ resource "aws_key_pair" "cicd_keypair" {
     Name = "${var.project_name}-keypair"
   }
 }
-
